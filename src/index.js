@@ -9,7 +9,12 @@ function Test() {
 
   return (
     <div>
-      <StarRating color="red" maxRating={10} onSetRating={setMovieRating} />
+      <StarRating
+        color="red"
+        maxRating={10}
+        onSetRating={setMovieRating}
+        defaultRating={4}
+      />
       <p>this movie has the {movieRating} rating</p>
     </div>
   );
