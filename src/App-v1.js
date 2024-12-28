@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ClipLoader } from "react-spinners";
 
 const tempMovieData = [
   {
@@ -55,15 +56,18 @@ const API_KEY = "f2603839";
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
+  const [isLoading, setIsLoading] = useState(false);
   const query = "whiplash";
 
   useEffect(() => {
     async function fetchMovies() {
+      setIsLoading(true);
       const res = await fetch(
         `http://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=${query}`
       );
       const data = await res.json();
       setMovies(data.Search);
+      setIsLoading(false);
     }
     fetchMovies();
   }, []);
@@ -76,15 +80,21 @@ export default function App() {
         <NumResults movies={movies} />
       </NavBar>
       <Main>
-        <Box>
-          <MovieList movies={movies} />
-        </Box>
+        <Box>{isLoading ? <Loader /> : <MovieList movies={movies} />}</Box>
         <Box>
           <WatchedSummary watched={watched} />
           <WatchedMoviesList watched={watched} />
         </Box>
       </Main>
     </>
+  );
+}
+
+function Loader() {
+  return (
+    <div className="loader">
+      <ClipLoader size={80} color={"#6741d9"} loading={true} />
+    </div>
   );
 }
 
