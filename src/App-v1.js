@@ -55,11 +55,17 @@ const API_KEY = "f2603839";
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
+  const query = "whiplash";
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=whiplash`)
-      .then((res) => res.json())
-      .then((data) => setMovies(data.Search));
+    async function fetchMovies() {
+      const res = await fetch(
+        `http://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=${query}`
+      );
+      const data = await res.json();
+      setMovies(data.Search);
+    }
+    fetchMovies();
   }, []);
 
   return (
