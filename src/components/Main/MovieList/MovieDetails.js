@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_KEY } from "../../App-v1";
+import { API_KEY } from "../../App";
 import StarRating from "../../StarRating/StarRating";
 import { Loader } from "../../UI/Loader";
 
