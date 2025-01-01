@@ -116,7 +116,7 @@ export function MovieDetails({
             </div>
           </header>
 
-          <section>
+          <section className="details-content">
             <div className="rating">
               {!isWatched ? (
                 <>
