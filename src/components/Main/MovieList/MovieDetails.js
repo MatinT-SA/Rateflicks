@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { API_KEY } from "../../App";
 import StarRating from "../../StarRating/StarRating";
 import { Loader } from "../../UI/Loader";
+import useKey from "../../../hooks/useKey";
 
 export function MovieDetails({
   selectedId,
@@ -63,20 +64,6 @@ export function MovieDetails({
     };
   }, [title]);
 
-  useEffect(() => {
-    function callback(e) {
-      if (e.code === "Escape") {
-        onCloseMovie();
-      }
-    }
-
-    document.addEventListener("keydown", callback);
-
-    return function () {
-      document.removeEventListener("keydown", callback);
-    };
-  }, [onCloseMovie]);
-
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
@@ -91,6 +78,8 @@ export function MovieDetails({
     onAddWatched(newWatchedMovie);
     onCloseMovie();
   }
+
+  useKey("Escape", onCloseMovie);
 
   return (
     <div className="details">
