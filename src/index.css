@@ -34,6 +34,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-background-900);
   padding: 2.4rem;
+  background: url("../public/images/bg.jpg") no-repeat center center/cover;
 }
 
 /* ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄ */
@@ -141,6 +142,7 @@ body {
   list-style: none;
   padding: 0.8rem 0;
   overflow-y: auto;
+  background: var(--color-background-500);
 }
 
 .list-watched {
