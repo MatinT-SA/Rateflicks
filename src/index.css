@@ -173,6 +173,11 @@ body {
   border: 2px solid var(--color-text-body);
 }
 
+.box:hover::-webkit-scrollbar-thumb,
+.list:hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-red);
+}
+
 .list-watched {
   height: calc(100% - 9rem);
 }
