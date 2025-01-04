@@ -9,13 +9,15 @@
 :root {
   --color-primary: #6741d9;
   --color-primary-light: #7950f2;
-  --color-text: #dee2e6;
-  --color-text-dark: #adb5bd;
+  --color-text: rgb(70, 70, 70);
+  --color-text-lighter: rgb(135, 134, 134);
+  --color-text-body: rgb(217, 210, 231);
+  --color-text-dark: rgb(27, 27, 27);
   --color-background-100: #343a40;
   --color-background-500: #2b3035;
   --color-background-900: #212529;
   --color-red: #fa5252;
-  --color-red-dark: #e03131;
+  --color-red-navbar: #68161c;
 }
 
 * {
@@ -30,9 +32,7 @@ html {
 
 body {
   font-family: "IBM Plex Sans", "Playwrite AU SA", sans-serif;
-
-  color: var(--color-text);
-  background-color: var(--color-background-900);
+  color: var(--color-text-dark);
   padding: 2.4rem;
   background: url("../public/images/bg.jpg") no-repeat center center/cover;
 }
@@ -41,13 +41,13 @@ body {
 /* ✿✿✿✿✿✿✿✿✿✿✿✿✿✿⥂ Navbar ⥄✿✿✿✿✿✿✿✿✿✿✿✿✿ */
 /* ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄ */
 
-.nav-bar {
+.navbar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 7.2rem;
   padding: 0 3.2rem;
-  background-color: var(--color-primary);
+  background-color: #68161c;
   border-radius: 0.9rem;
 }
 
@@ -77,11 +77,11 @@ body {
   width: 40rem;
   transition: all 0.3s;
   color: var(--color-text);
-  background-color: var(--color-primary-light);
+  background-color: rgb(219, 219, 219);
 }
 
 .search::placeholder {
-  color: var(--color-text-dark);
+  color: var(--color-text-lighter);
 }
 
 .search:focus {
@@ -95,6 +95,7 @@ body {
 .num-results {
   justify-self: end;
   font-size: 1.8rem;
+  color: var(--color-text-body);
 }
 
 /* ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄ */
@@ -112,7 +113,13 @@ body {
 .box {
   width: 42rem;
   max-width: 42rem;
-  background-color: var(--color-background-500);
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    var(--color-text-body),
+    var(--color-text-lighter),
+    var(--color-text)
+  );
   border-radius: 0.9rem;
   overflow-y: auto;
   position: relative;
@@ -142,7 +149,13 @@ body {
   list-style: none;
   padding: 0.8rem 0;
   overflow-y: auto;
-  background: var(--color-background-500);
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    var(--color-text-body),
+    var(--color-text-lighter),
+    var(--color-text)
+  );
 }
 
 .list-watched {
@@ -168,7 +181,7 @@ body {
 }
 
 .list.list-movies li:hover {
-  background-color: var(--color-background-100);
+  background-color: var(--color-text-lighter);
 }
 
 .list img {
