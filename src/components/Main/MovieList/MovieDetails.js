@@ -89,7 +89,7 @@ export function MovieDetails({
         <>
           <header>
             <button className="btn-back" onClick={onCloseMovie}>
-              <span className="btn-back__icon">&larr;</span>
+              &larr;
             </button>
             <img src={poster} alt={`Poster of ${title}`} />
             <div className="details-overview">
@@ -118,6 +118,8 @@ export function MovieDetails({
                   {userRating > 0 && (
                     <button className="btn-add" onClick={handleAdd}>
                       + Add to list
+                      <div class="btn-add__horizontal"></div>
+                      <div class="btn-add__vertical"></div>
                     </button>
                   )}
                 </>
