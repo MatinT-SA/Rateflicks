@@ -155,16 +155,19 @@ body {
   border-radius: 1rem;
 }
 
-.list::-webkit-scrollbar {
+.list::-webkit-scrollbar,
+.box::-webkit-scrollbar {
   width: 15px;
 }
 
-.list::-webkit-scrollbar-track {
+.list::-webkit-scrollbar-track,
+.box::-webkit-scrollbar-track {
   background: var(--color-text-body);
   border-radius: 0.5rem;
 }
 
-.list::-webkit-scrollbar-thumb {
+.list::-webkit-scrollbar-thumb,
+.box::-webkit-scrollbar-thumb {
   background-color: var(--color-red-navbar);
   border-radius: 0.5rem;
   border: 2px solid var(--color-text-body);
