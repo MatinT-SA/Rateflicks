@@ -472,3 +472,18 @@ body {
   padding: 4.8rem;
   color: var(--color-text-body);
 }
+
+/* ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄ */
+/* ✿✿✿✿✿✿✿✿✿✿✿⥂ Responsiveness ⥄✿✿✿✿✿✿✿✿✿✿✿ */
+/* ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄ */
+
+/* Wide Screens */
+@media (min-width: 1800px) {
+  html {
+    font-size: 90%;
+  }
+
+  .custom-toast-container .Toastify__toast {
+    width: 450px;
+  }
+}

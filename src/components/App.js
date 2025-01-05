@@ -63,6 +63,7 @@ export default function App() {
         theme="colored"
         transition={Flip}
         style={{ fontSize: "1.8rem" }}
+        className="custom-toast-container"
       />
       <NavBar>
         <Logo />
