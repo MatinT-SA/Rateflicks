@@ -111,7 +111,7 @@ export function MovieDetails({
                 <>
                   <StarRating
                     maxRating={10}
-                    size={24}
+                    size={32}
                     onSetRating={setUserRating}
                     color="#68161c"
                   />
