@@ -143,7 +143,6 @@ body {
 
 .list {
   list-style: none;
-  padding: 1rem 0;
   overflow-y: auto;
   background: linear-gradient(
     135deg,
@@ -152,6 +151,9 @@ body {
     var(--color-text-lighter),
     var(--color-text)
   );
+}
+
+.list:nth-child(1) {
   border-radius: 1rem;
 }
 
