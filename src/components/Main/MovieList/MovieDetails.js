@@ -13,6 +13,15 @@ export function MovieDetails({
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const starRatingSize = screenWidth < 1000 ? 24 : 32;
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
   const watchedUserRating = watched.find(
@@ -111,7 +120,7 @@ export function MovieDetails({
                 <>
                   <StarRating
                     maxRating={10}
-                    size={32}
+                    size={starRatingSize}
                     onSetRating={setUserRating}
                     color="#68161c"
                   />

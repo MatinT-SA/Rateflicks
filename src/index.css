@@ -39,7 +39,7 @@ body {
 
 .navbar {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 7rem;
   padding: 0 4rem;
@@ -496,5 +496,24 @@ body {
 
   .custom-toast-container .Toastify__toast {
     width: 450px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .logo img {
+    width: 150px;
+  }
+
+  .navbar {
+    padding: 0 2rem;
+  }
+
+  .num-results {
+    font-size: 1.6rem;
+  }
+
+  .list {
+    width: 100%;
+    max-width: 50rem;
   }
 }
