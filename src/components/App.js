@@ -38,6 +38,7 @@ export default function App() {
 
   function handleAddWatch(movie) {
     setWatched((watched) => [...watched, movie]);
+    toast.success("Movie added to watched list");
   }
 
   function handleDeleteWatched(id) {
@@ -61,7 +62,7 @@ export default function App() {
         pauseOnHover
         theme="colored"
         transition={Flip}
-        style={{ fontSize: "2rem" }}
+        style={{ fontSize: "1.8rem" }}
       />
       <NavBar>
         <Logo />
