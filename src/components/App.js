@@ -14,6 +14,8 @@ import { WatchedSummary } from "./Main/Watched/WatchedSummary";
 import { WatchedMoviesList } from "./Main/Watched/WatchedMoviesList";
 import useMovies from "../hooks/useMovies";
 import useLocalStorageState from "../hooks/useLocalStorageState";
+import { Flip, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -40,12 +42,27 @@ export default function App() {
 
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
+    toast.success("Movie removed");
   }
 
   const { movies, isLoading, error } = useMovies(query);
 
   return (
     <>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition={Flip}
+        style={{ fontSize: "2rem" }}
+      />
       <NavBar>
         <Logo />
         <Search query={query} setQuery={setQuery} />

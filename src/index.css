@@ -440,6 +440,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.2s ease;
 }
 
 .btn-back:hover {
