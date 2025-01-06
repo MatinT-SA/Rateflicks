@@ -591,6 +591,15 @@ body {
   .search {
     width: 25rem;
   }
+
+  .details header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details img {
+    width: 85%;
+  }
 }
 
 @media (max-width: 380px) {
