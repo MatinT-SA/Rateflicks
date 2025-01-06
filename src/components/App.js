@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { NavBar } from "./Navbar/NavBar";
 import { Logo } from "./Navbar/Logo";
@@ -46,7 +46,27 @@ export default function App() {
     toast.success("Movie removed");
   }
 
-  const { movies, isLoading, error } = useMovies(query);
+  const { movies, isLoading, error, queryLength } = useMovies(query);
+
+  useEffect(() => {
+    function handleResize() {
+      const box = document.querySelector(".box");
+      if (window.innerWidth < 700) {
+        if (queryLength < 3) {
+          box.style.height = "auto";
+        } else {
+          box.style.height = "100%";
+        }
+      } else {
+        box.style.height = "";
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [queryLength]);
 
   return (
     <>
