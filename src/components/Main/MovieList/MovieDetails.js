@@ -127,8 +127,8 @@ export function MovieDetails({
                   {userRating > 0 && (
                     <button className="btn-add" onClick={handleAdd}>
                       + Add to list
-                      <div class="btn-add__horizontal"></div>
-                      <div class="btn-add__vertical"></div>
+                      <div className="btn-add__horizontal"></div>
+                      <div className="btn-add__vertical"></div>
                     </button>
                   )}
                 </>
