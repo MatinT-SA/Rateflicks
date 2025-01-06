@@ -513,7 +513,36 @@ body {
   }
 
   .list {
-    width: 100%;
     max-width: 50rem;
+  }
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 55%;
+  }
+
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .search {
+    width: 30rem;
+  }
+
+  .list li {
+    font-size: 1.4rem;
+    gap: 2rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .list h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .main {
+    flex-direction: column;
   }
 }
