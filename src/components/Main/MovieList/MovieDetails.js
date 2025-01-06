@@ -21,7 +21,7 @@ export function MovieDetails({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const starRatingSize = screenWidth < 1000 ? 24 : 32;
+  const starRatingSize = screenWidth < 1000 ? 24 : screenWidth < 500 ? 16 : 32;
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
   const watchedUserRating = watched.find(
