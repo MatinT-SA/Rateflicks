@@ -651,4 +651,8 @@ body {
   .list h3 {
     font-size: 1.4rem;
   }
+
+  .btn-add {
+    letter-spacing: 1px;
+  }
 }
