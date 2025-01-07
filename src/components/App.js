@@ -20,7 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 export const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-export const API_KEY = process.env.OMDB_API_KEY;
+export const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
 
 export default function App() {
   const [watched, setWatched] = useLocalStorageState([], "watched");
